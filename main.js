@@ -1,7 +1,7 @@
 var app = new Vue(
     {
-        el:'#root',
-        data:{
+        el: '#root',
+        data: {
             tasks: [
                 {
                     text: 'Questa è una task di prova!',
@@ -9,7 +9,7 @@ var app = new Vue(
                 },
                 {
                     text: 'Questa è una task di prova!2',
-                    done: false,
+                    done: true,
                 },
                 {
                     text: 'Questa è una task di prova!3',
@@ -32,7 +32,9 @@ var app = new Vue(
         methods: {
             console: function () {
                 console.log(tasks)
+            },
+            removeTask: function () {
+                this.tasks.splice()
             }
-        }
     }
 ) 

@@ -25,25 +25,44 @@
 	<body class="bg-secondary">
 		<div id="root" class="container justify-content-center">
 			<div class="d-flex justify-content-center m-5 flex-column">
-				<h2 class="text-center">Questa To-Do List è meglio di Notion!</h2>
-                <!-- NOTE Sezione Input task -->
+				<h2 class="text-center">
+					Questa To-Do List è meglio di Notion!
+				</h2>
+				<!-- NOTE Sezione Input task -->
 				<div class="d-flex justify-content-center mt-3">
-					<input type="text" class="form-control w-75 me-3" placeholder="Aggiungi una task!"/>
+					<input
+						type="text"
+						class="form-control w-75 me-3"
+						placeholder="Aggiungi una task!"
+					/>
 					<button type="button" class="btn btn-primary">Add</button>
 				</div>
 			</div>
-            <!-- NOTE Sezione delle task -->
-			<div class="container bg-warning rounded-3 p-5">
-                <ul>
-                    <li v-for="task in tasks" :key="task.text" class="bg-muted list-unstyled my-3 p-3 rounded-3">
-                        <p class="m-0">{{task.text}}</p>
-                    </li>
-                </ul>
-            </div>
+			<!-- NOTE Sezione delle task -->
+			<div class="container bg-warning rounded-3 p-4">
+				<ul class="list-unstyled">
+					<li
+						v-for="task in tasks"
+						:key="task.text"
+						class="list-unstyled my-3 p-3 rounded-3 d-flex justify-content-between"
+						:class="(task.done === true)? 'text-decoration-line-through link-light bg-success':'bg-danger'"
+					>
+						<p class="m-0 text-light">{{task.text}}</p>
+                        <i @click="removeTask()" 
+                        class="fa-solid fa-circle-minus fs-5"></i>
+					</li>
+				</ul>
+			</div>
+			<h6
+				class="my-0 mx-auto bg-success d-inline-block rounded-3 p-2 text-light mt-3"
+			>
+				Scusate l'accozzaglia di
+				<span class="text-danger">colori</span>
+			</h6>
 		</div>
 		<!-- Vue! -->
 		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-        <!-- Main -->
-        <script src="./main.js"></script>
+		<!-- Main -->
+		<script src="./main.js"></script>
 	</body>
 </html>
