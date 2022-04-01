@@ -28,6 +28,7 @@ var app = new Vue(
                     done: false,
                 }
             ],
+            inputTask: '',
         },
         methods: {
             console: function () {
@@ -44,7 +45,16 @@ var app = new Vue(
                 }
             },
             newTask: function () {
-                
+                let newObjTask = {
+                    text: this.inputTask,
+                    done: false,
+                }
+                if ((this.inputTask != '') ) {
+                    console.log(newObjTask)
+                    this.tasks.push(newObjTask)
+                    console.log("1")
+                }
+                this.inputTask = ''
             }
         }
     }

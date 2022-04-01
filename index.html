@@ -35,6 +35,7 @@
 						type="text"
 						class="form-control w-75 me-3"
 						placeholder="Aggiungi una task!"
+						@keyup.enter="newTask"
 					/>
 					<button
 						@click="newTask"
