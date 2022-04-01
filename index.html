@@ -31,11 +31,18 @@
 				<!-- NOTE Sezione Input task -->
 				<div class="d-flex justify-content-center mt-3">
 					<input
+						v-model="inputTask"
 						type="text"
 						class="form-control w-75 me-3"
 						placeholder="Aggiungi una task!"
 					/>
-					<button type="button" class="btn btn-primary">Add</button>
+					<button
+						@click="newTask"
+						type="button"
+						class="btn btn-primary"
+					>
+						Add
+					</button>
 				</div>
 			</div>
 			<!-- NOTE Sezione delle task -->
