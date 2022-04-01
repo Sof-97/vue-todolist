@@ -35,6 +35,13 @@ var app = new Vue(
             },
             removeTask: function (index) {
                 this.tasks.splice(index,1)
+            },
+            doneToggle: function (index) {
+                if(this.tasks[index].done === true){
+                    this.tasks[index].done = false
+                } else {
+                    this.tasks[index].done = true
+                }
             }
     }
 }

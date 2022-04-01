@@ -42,6 +42,7 @@
 			<div class="container bg-warning rounded-3 p-4">
 				<ul class="list-unstyled">
 					<li
+						@click="doneToggle(i)"
 						v-for="(task, i) in tasks"
 						:key="task.text"
 						class="list-unstyled my-3 p-3 rounded-3 d-flex justify-content-between"
