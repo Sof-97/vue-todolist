@@ -33,8 +33,9 @@ var app = new Vue(
             console: function () {
                 console.log(tasks)
             },
-            removeTask: function () {
-                this.tasks.splice()
+            removeTask: function (index) {
+                this.tasks.splice(index,1)
             }
     }
-) 
+}
+)

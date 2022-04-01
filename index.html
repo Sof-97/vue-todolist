@@ -42,14 +42,16 @@
 			<div class="container bg-warning rounded-3 p-4">
 				<ul class="list-unstyled">
 					<li
-						v-for="task in tasks"
+						v-for="(task, i) in tasks"
 						:key="task.text"
 						class="list-unstyled my-3 p-3 rounded-3 d-flex justify-content-between"
 						:class="(task.done === true)? 'text-decoration-line-through link-light bg-success':'bg-danger'"
 					>
 						<p class="m-0 text-light">{{task.text}}</p>
-                        <i @click="removeTask()" 
-                        class="fa-solid fa-circle-minus fs-5"></i>
+						<i
+							@click="removeTask(i)"
+							class="fa-solid fa-circle-minus fs-5"
+						></i>
 					</li>
 				</ul>
 			</div>
