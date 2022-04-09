@@ -31,9 +31,6 @@ var app = new Vue(
             inputTask: '',
         },
         methods: {
-            console: function () {
-                console.log(tasks)
-            },
             removeTask: function (index) {
                 this.tasks.splice(index, 1)
             },
@@ -49,12 +46,16 @@ var app = new Vue(
                     text: this.inputTask,
                     done: false,
                 }
-                if ((this.inputTask != '') ) {
-                    console.log(newObjTask)
+                if ((this.inputTask != '') && !(this.checkTask(newObjTask) >0) ) {
                     this.tasks.push(newObjTask)
-                    console.log("1")
                 }
                 this.inputTask = ''
+            },
+            checkTask: function(x){
+                let checker = this.tasks.filter(function (task){
+                    return task.text == x.text
+                })
+                return checker.length
             }
         }
     }
